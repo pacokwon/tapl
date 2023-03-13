@@ -1,7 +1,7 @@
 (menhir
-  (modules parser))
+ (modules parser))
 
 (ocamllex lexer)
 
 (executable
-  (name main))
+ (name main))
