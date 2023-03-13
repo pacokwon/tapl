@@ -1,15 +1,13 @@
 (lang dune 3.2)
 
-(name lamb)
+(name tapl)
 
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github pacokwon/tapl))
 
-(authors "Author Name")
-
-(maintainers "Maintainer Name")
+(authors "pacokwon")
 
 (license LICENSE)
 
@@ -18,11 +16,9 @@
 (using menhir 2.1)
 
 (package
- (name lamb)
+ (name tapl)
  (synopsis "A short synopsis")
  (description "A longer description")
  (depends ocaml dune)
  (tags
   (topics "to describe" your project)))
-
-; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
