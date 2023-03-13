@@ -21,9 +21,7 @@ main:
 ;
 
 term:
-    | TRUE  { TypedTrue }
-    | FALSE { TypedFalse }
-    | at = appterm                      { at }
+    | at = appterm { at }
     | LAMBDA; id = IDENT; COLON; tp = typ; DOT; body = term { TypedAbs(id, tp, body) }
     (* | IF; cond = term; THEN; t1 = term; ELSE; t2 = term {  } *)
 ;
@@ -36,6 +34,8 @@ appterm:
 aterm:
     | LPAREN; t = term; RPAREN  { t }
     | id = IDENT                { TypedVar(id) }
+    | TRUE  { TypedTrue }
+    | FALSE { TypedFalse }
 ;
 
 typ:
