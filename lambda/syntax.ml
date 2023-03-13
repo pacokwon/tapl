@@ -89,18 +89,15 @@ let substitute_top body argument =
 (* Debug substitute_top *)
 let rec evaluate_debruijn_step = function
     | DeApp(DeAbs(t12), v2) as t when is_value v2 ->
-            print_string "Step 1\n";
             print_debruijn t;
             print_newline();
             substitute_top t12 v2
     | DeApp(v1, t2) as t when is_value v1 ->
-            print_string "Step 2\n";
             print_debruijn t;
             print_newline();
             let t2' = evaluate_debruijn_step t2 in
             DeApp(v1, t2')
     | DeApp(t1, t2) as t ->
-            print_string "Step 3\n";
             print_debruijn t;
             print_newline();
             let t1' = evaluate_debruijn_step t1 in
