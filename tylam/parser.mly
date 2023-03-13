@@ -23,7 +23,7 @@ main:
 term:
     | at = appterm { at }
     | LAMBDA; id = IDENT; COLON; tp = typ; DOT; body = term { TypedAbs(id, tp, body) }
-    (* | IF; cond = term; THEN; t1 = term; ELSE; t2 = term {  } *)
+    | IF; cond = term; THEN; t = term; ELSE; f = term { TypedCond(cond, t, f) }
 ;
 
 appterm:
